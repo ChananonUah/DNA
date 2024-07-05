@@ -17,8 +17,7 @@ function replication1() {
             ans += "C"
         }
         else if (input_dna[i] == "U") {
-            ans = "เบส U อยู่ใน mRNA"
-            break
+            ans += "A"
         }
         else {
             ans = "มีบางอย่างผิดปกติ"
@@ -71,3 +70,74 @@ function replication2() {
 }
 
 document.getElementById("rna_rep").addEventListener('click', replication2)
+
+//Amino
+function find_amino() {
+    const codon_to_amino_acid = {
+        'UUU': 'Phenylalanine', 'UUC': 'Phenylalanine',
+        'UUA': 'Leucine', 'UUG': 'Leucine',
+        'CUU': 'Leucine', 'CUC': 'Leucine', 'CUA': 'Leucine', 'CUG': 'Leucine',
+        'AUU': 'Isoleucine', 'AUC': 'Isoleucine', 'AUA': 'Isoleucine',
+        'AUG': 'Methionine',  // start codon
+        'GUU': 'Valine', 'GUC': 'Valine', 'GUA': 'Valine', 'GUG': 'Valine',
+        'UCU': 'Serine', 'UCC': 'Serine', 'UCA': 'Serine', 'UCG': 'Serine',
+        'CCU': 'Proline', 'CCC': 'Proline', 'CCA': 'Proline', 'CCG': 'Proline',
+        'ACU': 'Threonine', 'ACC': 'Threonine', 'ACA': 'Threonine', 'ACG': 'Threonine',
+        'GCU': 'Alanine', 'GCC': 'Alanine', 'GCA': 'Alanine', 'GCG': 'Alanine',
+        'UAU': 'Tyrosine', 'UAC': 'Tyrosine',
+        'UAA': 'Stop', 'UAG': 'Stop',
+        'CAU': 'Histidine', 'CAC': 'Histidine',
+        'CAA': 'Glutamine', 'CAG': 'Glutamine',
+        'AAU': 'Asparagine', 'AAC': 'Asparagine',
+        'AAA': 'Lysine', 'AAG': 'Lysine',
+        'GAU': 'Aspartic acid', 'GAC': 'Aspartic acid',
+        'GAA': 'Glutamic acid', 'GAG': 'Glutamic acid',
+        'UGU': 'Cysteine', 'UGC': 'Cysteine',
+        'UGA': 'Stop',
+        'UGG': 'Tryptophan',
+        'CGU': 'Arginine', 'CGC': 'Arginine', 'CGA': 'Arginine', 'CGG': 'Arginine',
+        'AGU': 'Serine', 'AGC': 'Serine',
+        'AGA': 'Arginine', 'AGG': 'Arginine',
+        'GGU': 'Glycine', 'GGC': 'Glycine', 'GGA': 'Glycine', 'GGG': 'Glycine'
+    }
+
+
+    let mRna = document.getElementById("DNA").value
+    let count = 0
+    let codon = ""
+    let b = -1
+    let ans = ""
+
+    if (document.getElementById('a').value == 3) {
+        mRna = mRna.split('').reverse().join('')
+    }
+
+    for (let i = 0; i < mRna.length; i++) {
+        if (mRna[i] === "A" && mRna[i + 1] === "U" && mRna[i + 2] === "G") {
+            b = i;
+            break;
+        }
+    }
+
+    if (b === -1) {
+        console.log("ไม่มี start codon")
+    } else {
+        for (let j = b; j < mRna.length; j++) {
+            codon += mRna[j]
+            count++
+            if (count === 3) {
+                if (!["UAA", "UAG", "UGA"].includes(codon)) {
+                    ans += ` |  ${codon}: ${codon_to_amino_acid[codon]}  | `
+                    count = 0
+                    codon = ""
+                } else {
+                    ans += ` |  ${codon}: ${codon_to_amino_acid[codon]}  | `
+                    break
+                }
+            }
+        }
+    }
+    document.getElementById('show_ans').innerHTML = (ans)
+}
+
+document.getElementById("find_amino").addEventListener('click', find_amino)
