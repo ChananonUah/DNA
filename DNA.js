@@ -6,7 +6,7 @@ function replication1() {
     let a = document.getElementById('a').value
     let b = document.getElementById('b').value
     
-    if (input_dna = "") {
+    if (input_dna == "") {
         return alert("โปรดใส่ DNA / RNA")
     }
 
