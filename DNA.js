@@ -1,78 +1,165 @@
-//DNA
+//result
 function replication1() {
     let input_dna = document.getElementById("DNA").value
-    let ans = ""
-
-    for (let i = 0; i < input_dna.length; i++) {
-        if (input_dna[i] == "A") {
-            ans += "T"
-        }
-        else if (input_dna[i] == "T") {
-            ans += "A"
-        }
-        else if (input_dna[i] == "C") {
-            ans += "G"
-        }
-        else if (input_dna[i] == "G") {
-            ans += "C"
-        }
-        else if (input_dna[i] == "U") {
-            ans += "A"
-        }
-        else {
-            ans = "มีบางอย่างผิดปกติ"
-            break
-        }
-    }
-    console.log(ans)
-    if (document.getElementById('a').value == 3) {
-        ans = "DNA สังเคราะห์ : 5'  " + ans + "  3'"
-    }
-    else if (document.getElementById('a').value == 5){
-        ans = "DNA แม่แบบ : 3'  " + ans + "  5'"
+    let show = ""
+    let rna = ""
+    let a = document.getElementById('a').value
+    let b = document.getElementById('b').value
+    
+    if (input_dna = "") {
+        return alert("โปรดใส่ DNA / RNA")
     }
 
-    document.getElementById('show_ans').innerHTML = (ans)
+    if (a == "" || b == "") {
+         return alert("โปรดใส่ทิศทาง")
+    }
+
+    if (a != 3 && b != 3) {
+        return alert("ทิศทางผิด")
+    }
+    else if (a != 5 && b != 5) {
+        return alert("ทิศทางผิด")
+    }
+    else if (a == b) {
+        return alert("ทิศทางผิด")
+    }
+
+    if (document.getElementById("type_1").checked == true) {
+        if (a == 5) {
+            input_dna = input_dna.split('').reverse().join('')
+        }
+        ans = dna1(input_dna)
+        rna = rna1(input_dna)
+        amino = find_amino(rna)
+
+        show += "<p>DNA Template : 3'  " + input_dna + "  5'</p>"
+        show += "<p>DNA Non-Template : 5'  " + ans + "  3'</p>"
+        show += "<p>mRNA : 5'  " + rna + "  3'</p>"
+        show += "<p>" + amino + "</p>"
+    }
+
+    else if (document.getElementById("type_2").checked == true) {
+        if (a == 3) {
+            input_dna = input_dna.split('').reverse().join('')
+        }
+        ans = dna1(input_dna)
+        rna = rna1(ans)
+        amino = find_amino(rna)
+        
+        show += "<p>DNA Template : 3'  " + ans + "  5'</p>"
+        show += "<p>DNA Non-Template : 5'  " + input_dna + "  3'</p>"
+        show += "<p>mRNA : 5'  " + rna + "  3'</p>"
+        show += "<p>" + amino + "</p>"
+    }
+
+    else if (document.getElementById("type_3").checked == true) {
+        if (a == 3) {
+            input_dna = input_dna.split('').reverse().join('')
+        }
+        ans = rna2(input_dna)
+        dna_non = dna1(ans)
+        amino = find_amino(input_dna)
+        console.log(amino)
+        show += "<p>DNA Template : 3'  " + ans + "  5'</p>"
+        show += "<p>DNA Non-Template : 5'  " + dna_non + "  3'</p>"
+        show += "<p>mRNA : 5'  " + input_dna + "  3'</p>"
+        show += "<p>" + amino + "</p>"
+    }
+
+    else {
+        return alert('เลือกประเภทสาย Polynuecleotile')
+    }
+
+    document.getElementById('show_ans').innerHTML = (show)
+    
 }
 
 document.getElementById("dna_rep").addEventListener('click', replication1)
 
-
-// RNA
-function replication2() {
-    let input_dna = document.getElementById("DNA").value
-    let ans = ""
-    
-    if (document.getElementById('a').value == 5) {
-        input_dna = input_dna.split('').reverse().join('')
-    }
-    
+//dna to dna
+function dna1(input_dna) {
+    let dna = ""
     for (let i = 0; i < input_dna.length; i++) {
         if (input_dna[i] == "A") {
-            ans += "U"
+            dna += "T"
         }
         else if (input_dna[i] == "T") {
-            ans += "A"
+            dna += "A"
         }
         else if (input_dna[i] == "C") {
-            ans += "G"
+            dna += "G"
         }
         else if (input_dna[i] == "G") {
-            ans += "C"
+            dna += "C"
+        }
+        else if (input_dna[i] == "U") {
+            alert("ใน DNA ไม่มีเบส U")
+            window.stop();
+            break
         }
         else {
-            ans = "มีบางอย่างผิดปกติ"
+            alert("มีบางอย่างผิดปกติ")
+            window.stop();
             break
         }
     }
-
-    document.getElementById('show_ans').innerHTML = ("mRNA ที่ได้ : 5'  " + ans + "  3'")
+    return dna
 }
 
-document.getElementById("rna_rep").addEventListener('click', replication2)
+//rna to dna
+function rna2(input_dna) {
+    let dna = ""
+    for (let i = 0; i < input_dna.length; i++) {
+        if (input_dna[i] == "A") {
+            dna += "T"
+        }
+        else if (input_dna[i] == "T") {
+            alert("ใน RNA ไม่มีเบส T")
+        }
+        else if (input_dna[i] == "C") {
+            dna += "G"
+        }
+        else if (input_dna[i] == "G") {
+            dna += "C"
+        }
+        else if (input_dna[i] == "U") {
+            dna += "A"
+        }
+        else {
+            alert("มีบางอย่างผิดปกติ")
+            window.stop();
+            break
+        }
+    }
+    return dna
+}
+
+//dna to rna
+function rna1(input_dna) {
+    rna = ""
+    for (let i = 0; i < input_dna.length; i++) {
+        if (input_dna[i] == "A") {
+            rna += "U"
+        }
+        else if (input_dna[i] == "T") {
+            rna += "A"
+        }
+        else if (input_dna[i] == "C") {
+            rna += "G"
+        }
+        else if (input_dna[i] == "G") {
+            rna += "C"
+        }
+        else {
+            rna = "มีบางอย่างผิดปกติ"
+            break
+        }
+    }
+    return rna
+}
 
 //Amino
-function find_amino() {
+function find_amino(mRna) {
     const codon_to_amino_acid = {
         'UUU': 'Phenylalanine', 'UUC': 'Phenylalanine',
         'UUA': 'Leucine', 'UUG': 'Leucine',
@@ -101,16 +188,10 @@ function find_amino() {
         'GGU': 'Glycine', 'GGC': 'Glycine', 'GGA': 'Glycine', 'GGG': 'Glycine'
     }
 
-
-    let mRna = document.getElementById("DNA").value
     let count = 0
     let codon = ""
     let b = -1
     let ans = ""
-
-    if (document.getElementById('a').value == 3) {
-        mRna = mRna.split('').reverse().join('')
-    }
 
     for (let i = 0; i < mRna.length; i++) {
         if (mRna[i] === "A" && mRna[i + 1] === "U" && mRna[i + 2] === "G") {
@@ -120,7 +201,7 @@ function find_amino() {
     }
 
     if (b === -1) {
-        console.log("ไม่มี start codon")
+        ans = "ไม่มี start codon"
     } else {
         for (let j = b; j < mRna.length; j++) {
             codon += mRna[j]
@@ -137,7 +218,18 @@ function find_amino() {
             }
         }
     }
-    document.getElementById('show_ans').innerHTML = (ans)
+    return ans
 }
 
-document.getElementById("find_amino").addEventListener('click', find_amino)
+
+function check(p) {
+    if(p==1){
+    document.getElementById("type_1").checked = true;
+    }
+    if(p==2){
+    document.getElementById("type_2").checked = true;
+    }
+    if(p==3){
+        document.getElementById("type_3").checked = true;
+        }
+}
