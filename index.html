@@ -6,28 +6,30 @@
     <title>DNA_RNA</title>
 </head>
 <body>
-    <header>
-        <h1>การสังเคราห์ DNA และ RNA</h1>
-    </header>
-    <div>
-        <p>DNA / RNA</p>
-        <p>
-            <input type="radio" name="type_dna" id="type_1" value="tem" onclick="check('1')"> Template
-            <input type="radio" name="type_dna" id="type_2" value="non" onclick="check('2')"> Non-Template
+    <div class="boxbig"> 
+        <div class="box">
+         <h1>การสังเคราห์ DNA และ RNA</h1>
+         <p>DNA / RNA</p>
+         <p>
+          <input type="radio" name="type_dna" id="type_1" value="tem" onclick="check('1')"> Template
+          <input type="radio" name="type_dna" id="type_2" value="non" onclick="check('2')"> Non-Template
             <input type="radio" name="type_dna" id="type_3" value="rna" onclick="check('3')"> mRNA
-        </p>
-        <input type="number" style="width: 35px;" id="a">
-        <h6 style="display: inline-block;">'</h6>
-        <input placeholder="สาย DNA / RNA" id="DNA">
-        <input type="number" style="width: 35px;" id="b">
-        <h6 style="display: inline-block;">'</h6>
-        <p>
+         </p>
+          <input type="number" style="width: 35px;" id="a">
+          <h6 style="display: inline-block;">'</h6>
+          <input placeholder="สาย DNA / RNA" id="DNA">
+          <input type="number" style="width: 35px;" id="b">
+          <h6 style="display: inline-block;">'</h6>
+          <p>
             <button id="dna_rep">RESULT</button>
-        </p>
+         </p>
+          <div style='color': aquarium id="show_ans">แสดงคำตอบที่นี่</div>
         
+        </div>
+    
     </div>
-
-    <div style="background-color: aqua;padding: 20px;" id="show_ans">แสดงคำตอบที่นี่</div>
+    
+     
     <script src="DNA.js"></script>
 </body>
 </html>
