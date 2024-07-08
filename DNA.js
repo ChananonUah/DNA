@@ -5,13 +5,13 @@ function replication1() {
     let rna = ""
     let a = document.getElementById('a').value
     let b = document.getElementById('b').value
-    
+
     if (input_dna == "") {
         return alert("โปรดใส่ DNA / RNA")
     }
 
     if (a == "" || b == "") {
-         return alert("โปรดใส่ทิศทาง")
+        return alert("โปรดใส่ทิศทาง")
     }
 
     if (a != 3 && b != 3) {
@@ -59,15 +59,14 @@ function replication1() {
         ans = rna2(input_dna)
         dna_non = dna1(ans)
         amino = find_amino(input_dna)
-        console.log(amino)
+
         show += "<p>DNA Template : 3'  " + ans + "  5'</p>"
         show += "<p>DNA Non-Template : 5'  " + dna_non + "  3'</p>"
         show += "<p>mRNA : 5'  " + input_dna + "  3'</p>"
         show += "<p>" + amino + "</p>"
     }
-
     else {
-        return alert('เลือกประเภทสาย Polynuecleotile')
+        alert('เลือกประเภทสาย Polynuecleotile')
     }
 
     document.getElementById('show_ans').innerHTML = (show)
@@ -232,4 +231,15 @@ function check(p) {
     if(p==3){
         document.getElementById("type_3").checked = true;
         }
+}
+
+function reset() {
+    const radioButtons = document.querySelectorAll('input[type="radio"]');
+            radioButtons.forEach(radio => {
+                radio.checked = false;
+            });
+    document.getElementById('a').value = ''
+    document.getElementById('b').value = ''
+    document.getElementById('DNA').value = ''
+    document.getElementById('show_ans').innerHTML = ('แสดงคำตอบที่นี่')
 }
