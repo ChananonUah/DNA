@@ -64,6 +64,15 @@ body{
         border-radius: 10px;
     }
 
+    & .reset{
+        font-size: 1.2rem;
+        color: #fff;
+        border: solid 1px red;
+        background: rgba(245, 18, 18, 0.759);
+        padding: 3px;
+        border-radius: 10px;
+    }
+
 
 }
 
@@ -81,6 +90,15 @@ body{
 
 
 #dna_rep:hover{
+
+    background-image: linear-gradient(90deg, rgba(218, 73, 55, 1) 0%, rgba(255, 223, 30, 1) 62%);
+    color: black;
+    border: solid 1px white;
+    padding: 5px;
+
+}
+
+.reset:hover{
 
     background-image: linear-gradient(90deg, rgba(218, 73, 55, 1) 0%, rgba(255, 223, 30, 1) 62%);
     color: black;
@@ -129,7 +147,16 @@ body{
             padding: 3px;
             border-radius: 10px;
         }
-    
+
+         & .reset{
+           
+            font-size: 1.2rem;
+            color: #fff;
+            border: solid 1px red;
+            background: rgba(245, 18, 18, 0.759);
+            padding: 3px;
+            border-radius: 10px;
+        }
     
     }
 }
@@ -167,6 +194,15 @@ body{
             border-radius: 10px;
         }
 
+        & .reset{
+            font-size: 1.2rem;
+            color: #fff;
+            border: solid 1px red;
+            background: rgba(245, 18, 18, 0.759);
+            padding: 3px;
+            border-radius: 10px;
+        }
+
         & #show_ans{
             font-size: 1rem;
         }
@@ -195,6 +231,15 @@ body{
         }
     
         & #dna_rep{
+            font-size: .8rem;
+            color: #fff;
+            border: solid 1px red;
+            background: rgba(245, 18, 18, 0.759);
+            padding: 3px;
+            border-radius: 10px;
+        }
+
+        & .reset{
             font-size: .8rem;
             color: #fff;
             border: solid 1px red;
@@ -246,6 +291,15 @@ body{
             border-radius: 10px;
         }
 
+        & .reset{
+            font-size: .7rem;
+            color: #fff;
+            border: solid 1px red;
+            background: rgba(245, 18, 18, 0.759);
+            padding: 3px;
+            border-radius: 10px;
+        }
+
         & #show_ans{
             font-size: .8rem;
         }
@@ -275,6 +329,15 @@ body{
         }
     
         & #dna_rep{
+            font-size: .7rem;
+            color: #fff;
+            border: solid 1px red;
+            background: rgba(245, 18, 18, 0.759);
+            padding: 3px;
+            border-radius: 10px;
+        }
+
+         & .reset{
             font-size: .7rem;
             color: #fff;
             border: solid 1px red;
