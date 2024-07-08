@@ -1,0 +1,299 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body{
+    background: url(https://www.findatopdoc.com/var/fatd/storage/images/_aliases/fb_thumb/pending_articles/structure-and-function-of-dna/7441253-2-eng-US/The-Function-and-Structure-of-DNA.jpg);
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    z-index: -1;
+}
+
+
+
+
+.boxbig{
+    
+    width: 100%;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    
+}
+
+.box{
+    
+    
+    width: 50%;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 15px 15px 20px rgb(2, 191, 243) , -5px -5px 5px rgb(1, 46, 243);;
+    padding: 2rem;
+    font-size: 2rem;
+    & h1{
+        font-size: 3.3rem;
+        margin-bottom: 1rem;
+    }
+    & p{
+        margin-bottom: 1rem;
+        
+    }
+
+    & input{
+        font-size: 1.5rem;
+    }
+
+    & button{
+        font-size: 1rem;
+    }
+
+    & #dna_rep{
+        font-size: 1.2rem;
+        color: #fff;
+        border: solid 1px red;
+        background: rgba(245, 18, 18, 0.759);
+        padding: 3px;
+        border-radius: 10px;
+    }
+
+
+}
+
+
+#show_ans{
+    max-height: 350px;
+    overflow-y: scroll; /* เปิดใช้งานการเลื่อนในแนวตั้ง */
+    overflow-x: hidden; /* ซ่อนการเลื่อนในแนวนอน (ถ้าไม่ต้องการ) */
+    font-size: 1.5rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    
+}
+
+
+
+#dna_rep:hover{
+
+    background-image: linear-gradient(90deg, rgba(218, 73, 55, 1) 0%, rgba(255, 223, 30, 1) 62%);
+    color: black;
+    border: solid 1px white;
+    padding: 5px;
+
+}
+
+@media only screen and (max-width:1080px){
+    .box{
+    
+    
+        width: 50%;
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 15px 15px 20px rgb(2, 191, 243) , -5px -5px 5px rgb(1, 46, 243);;
+        padding: 2rem;
+        font-size: 2rem;
+        & h1{
+            font-size: 2.7rem;
+            margin-bottom: 1rem;
+        }
+        & p{
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            
+        }
+    
+        & input{
+            margin-top: .5rem;
+            
+            font-size: 1.1rem;
+        }
+    
+        & button{
+            margin-top: .8rem;
+            font-size: 1rem;
+        }
+    
+        & #dna_rep{
+           
+            font-size: 1.2rem;
+            color: #fff;
+            border: solid 1px red;
+            background: rgba(245, 18, 18, 0.759);
+            padding: 3px;
+            border-radius: 10px;
+        }
+    
+    
+    }
+}
+
+@media only screen and (max-width: 900px){
+
+
+    
+    .box{
+        width: 70%;
+        
+        & h1{
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        & p{
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+    
+        & input{
+            font-size: 1.2rem;
+        }
+    
+        & button{
+            font-size: 1rem;
+        }
+    
+        & #dna_rep{
+            font-size: 1.2rem;
+            color: #fff;
+            border: solid 1px red;
+            background: rgba(245, 18, 18, 0.759);
+            padding: 3px;
+            border-radius: 10px;
+        }
+
+        & #show_ans{
+            font-size: 1rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .box{
+        width: 70%;
+        
+        & h1{
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        & p{
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+    
+        & input{
+            font-size: .9rem;
+        }
+    
+        & button{
+            font-size: 1rem;
+        }
+    
+        & #dna_rep{
+            font-size: .8rem;
+            color: #fff;
+            border: solid 1px red;
+            background: rgba(245, 18, 18, 0.759);
+            padding: 3px;
+            border-radius: 10px;
+        }
+
+        & #show_ans{
+            font-size: 1rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .box{
+        
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 10px 10px 15px rgb(2, 191, 243) , -3px -3px 3px rgb(1, 46, 243);;
+        padding: 2rem;
+        font-size: 2rem;
+        width: 80%;
+        & h1{
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        & p{
+            margin-bottom: 1rem;
+            font-size: 15px;
+        }
+    
+        & input{
+
+            font-size: .8rem;
+            
+        }
+    
+        & button{
+            font-size: .2rem;
+        }
+    
+        & #dna_rep{
+            font-size: .7rem;
+            color: #fff;
+            border: solid 1px red;
+            background: rgba(245, 18, 18, 0.759);
+            padding: 3px;
+            border-radius: 10px;
+        }
+
+        & #show_ans{
+            font-size: .8rem;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 400px){
+    .box{
+
+        width: 90%;
+        & input{
+            font-size: 1rem;
+            
+        }
+        & h1{
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        & p{
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+    
+        & button{
+            font-size: .2rem;
+        }
+    
+        & #dna_rep{
+            font-size: .7rem;
+            color: #fff;
+            border: solid 1px red;
+            background: rgba(245, 18, 18, 0.759);
+            padding: 3px;
+            border-radius: 10px;
+        }
+
+        & #show_ans{
+            font-size: .8rem;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
