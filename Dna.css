@@ -334,11 +334,10 @@ body{
 @media only screen and (max-width: 400px){
     .box{
         text-align: center;
-        justify-content: center;
         width: 90%;
         & input{
             width: 30px;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
         & h1{
             font-size: 1.5rem;
@@ -346,7 +345,7 @@ body{
         }
         & p{
             margin-bottom: 1.5rem;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
     
         & button{
@@ -378,7 +377,8 @@ body{
         }
 
         & #show_ans{
-            font-size: .9rem;
+            font-size: .8rem;
+            text-align: start;
         }
     }
 }
