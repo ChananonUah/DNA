@@ -334,7 +334,7 @@ body{
 @media only screen and (max-width: 400px){
     .box{
 
-        width: 90%;
+        width: 95%;
         & input{
             font-size: 1rem;
             
