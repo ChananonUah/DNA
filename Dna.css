@@ -333,10 +333,11 @@ body{
 
 @media only screen and (max-width: 400px){
     .box{
-        justify-content: center;
+        text-align: center;
         width: 90%;
         & input{
             width: 30px;
+            display: block;
             font-size: 1rem;
         }
         & h1{
