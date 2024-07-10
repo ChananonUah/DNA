@@ -1,6 +1,6 @@
 //result
 function replication1() {
-    let input_dna = document.getElementById("DNA").value
+    let input_dna = document.getElementById("DNA").value.toUpperCase()
     let show = ""
     let rna = ""
     let a = document.getElementById('a').value
@@ -79,19 +79,19 @@ document.getElementById("dna_rep").addEventListener('click', replication1)
 function dna1(input_dna) {
     let dna = ""
     for (let i = 0; i < input_dna.length; i++) {
-        if (input_dna[i] == "A" || input_dna[i] == "a") {
+        if (input_dna[i] == "A") {
             dna += "T"
         }
-        else if (input_dna[i] == "T" || input_dna[i] == "t") {
+        else if (input_dna[i] == "T") {
             dna += "A"
         }
-        else if (input_dna[i] == "C" || input_dna[i] == "c") {
+        else if (input_dna[i] == "C") {
             dna += "G"
         }
-        else if (input_dna[i] == "G" || input_dna[i] == "g") {
+        else if (input_dna[i] == "G") {
             dna += "C"
         }
-        else if (input_dna[i] == "U" || input_dna[i] == "u") {
+        else if (input_dna[i] == "U") {
             alert("ใน DNA ไม่มีเบส U")
             window.stop();
             break
@@ -109,19 +109,19 @@ function dna1(input_dna) {
 function rna2(input_dna) {
     let dna = ""
     for (let i = 0; i < input_dna.length; i++) {
-        if (input_dna[i] == "A" || input_dna[i] == "a") {
+        if (input_dna[i] == "A") {
             dna += "T"
         }
-        else if (input_dna[i] == "T" || input_dna[i] == "t") {
+        else if (input_dna[i] == "T") {
             alert("ใน RNA ไม่มีเบส T")
         }
-        else if (input_dna[i] == "C" || input_dna[i] == "c") {
+        else if (input_dna[i] == "C") {
             dna += "G"
         }
-        else if (input_dna[i] == "G" || input_dna[i] == "g") {
+        else if (input_dna[i] == "G") {
             dna += "C"
         }
-        else if (input_dna[i] == "U" || input_dna[i] == "u") {
+        else if (input_dna[i] == "U") {
             dna += "A"
         }
         else {
@@ -137,16 +137,16 @@ function rna2(input_dna) {
 function rna1(input_dna) {
     rna = ""
     for (let i = 0; i < input_dna.length; i++) {
-        if (input_dna[i] == "A" || input_dna[i] == "a") {
+        if (input_dna[i] == "A") {
             rna += "U"
         }
-        else if (input_dna[i] == "T" || input_dna[i] == "t") {
+        else if (input_dna[i] == "T") {
             rna += "A"
         }
-        else if (input_dna[i] == "C" || input_dna[i] == "c") {
+        else if (input_dna[i] == "C") {
             rna += "G"
         }
-        else if (input_dna[i] == "G" || input_dna[i] == "g") {
+        else if (input_dna[i] == "G") {
             rna += "C"
         }
         else {
@@ -193,7 +193,7 @@ function find_amino(mRna) {
     let ans = ""
 
     for (let i = 0; i < mRna.length; i++) {
-        if (mRna[i] === "A" && mRna[i + 1] === "U" && mRna[i + 2] === "G") {
+        if (mRna[i] === "A"  && mRna[i + 1] === "U" && mRna[i + 2] === "G") {
             b = i;
             break;
         }
