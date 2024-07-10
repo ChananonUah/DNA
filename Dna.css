@@ -334,6 +334,7 @@ body{
 @media only screen and (max-width: 400px){
     .box{
         text-align: center;
+        justify-content: center;
         width: 90%;
         & input{
             width: 30px;
@@ -372,7 +373,7 @@ body{
 
         & .input_dna{
             display: block;
-            width: 70%;
+            width: 90%;
             box-sizing: border-box;
         }
 
