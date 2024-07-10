@@ -336,6 +336,7 @@ body{
         padding: 2px;
         width: 95%;
         & input{
+            width: 30px;
             font-size: 1rem;
         }
         & h1{
