@@ -337,7 +337,6 @@ body{
         width: 90%;
         & input{
             width: 30px;
-            display: block;
             font-size: 1rem;
         }
         & h1{
