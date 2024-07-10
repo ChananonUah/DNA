@@ -371,6 +371,7 @@ body{
         }
 
         & .input_dna{
+            display: block;
             width: 70%;
             box-sizing: border-box;
         }
