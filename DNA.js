@@ -79,19 +79,19 @@ document.getElementById("dna_rep").addEventListener('click', replication1)
 function dna1(input_dna) {
     let dna = ""
     for (let i = 0; i < input_dna.length; i++) {
-        if (input_dna[i] == "A") {
+        if (input_dna[i] == "A" || input_dna[i] == "a") {
             dna += "T"
         }
-        else if (input_dna[i] == "T") {
+        else if (input_dna[i] == "T" || input_dna[i] == "t") {
             dna += "A"
         }
-        else if (input_dna[i] == "C") {
+        else if (input_dna[i] == "C" || input_dna[i] == "c") {
             dna += "G"
         }
-        else if (input_dna[i] == "G") {
+        else if (input_dna[i] == "G" || input_dna[i] == "g") {
             dna += "C"
         }
-        else if (input_dna[i] == "U") {
+        else if (input_dna[i] == "U" || input_dna[i] == "u") {
             alert("ใน DNA ไม่มีเบส U")
             window.stop();
             break
@@ -109,19 +109,19 @@ function dna1(input_dna) {
 function rna2(input_dna) {
     let dna = ""
     for (let i = 0; i < input_dna.length; i++) {
-        if (input_dna[i] == "A") {
+        if (input_dna[i] == "A" || input_dna[i] == "a") {
             dna += "T"
         }
-        else if (input_dna[i] == "T") {
+        else if (input_dna[i] == "T" || input_dna[i] == "t") {
             alert("ใน RNA ไม่มีเบส T")
         }
-        else if (input_dna[i] == "C") {
+        else if (input_dna[i] == "C" || input_dna[i] == "c") {
             dna += "G"
         }
-        else if (input_dna[i] == "G") {
+        else if (input_dna[i] == "G" || input_dna[i] == "g") {
             dna += "C"
         }
-        else if (input_dna[i] == "U") {
+        else if (input_dna[i] == "U" || input_dna[i] == "u") {
             dna += "A"
         }
         else {
@@ -137,16 +137,16 @@ function rna2(input_dna) {
 function rna1(input_dna) {
     rna = ""
     for (let i = 0; i < input_dna.length; i++) {
-        if (input_dna[i] == "A") {
+        if (input_dna[i] == "A" || input_dna[i] == "a") {
             rna += "U"
         }
-        else if (input_dna[i] == "T") {
+        else if (input_dna[i] == "T" || input_dna[i] == "t") {
             rna += "A"
         }
-        else if (input_dna[i] == "C") {
+        else if (input_dna[i] == "C" || input_dna[i] == "c") {
             rna += "G"
         }
-        else if (input_dna[i] == "G") {
+        else if (input_dna[i] == "G" || input_dna[i] == "g") {
             rna += "C"
         }
         else {
@@ -207,11 +207,11 @@ function find_amino(mRna) {
             count++
             if (count === 3) {
                 if (!["UAA", "UAG", "UGA"].includes(codon)) {
-                    ans += ` |  ${codon}: ${codon_to_amino_acid[codon]}  | `
+                    ans += `<p>|  ${codon}: ${codon_to_amino_acid[codon]}  |</p>`
                     count = 0
                     codon = ""
                 } else {
-                    ans += ` |  ${codon}: ${codon_to_amino_acid[codon]}  | `
+                    ans += `<p>|  ${codon}: ${codon_to_amino_acid[codon]}  |</p>`
                     break
                 }
             }
