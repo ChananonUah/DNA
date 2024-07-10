@@ -338,7 +338,7 @@ body{
         width: 90%;
         & input{
             width: 30px;
-            font-size: 1rem;
+            font-size: 1.3rem;
         }
         & h1{
             font-size: 1.5rem;
@@ -346,7 +346,7 @@ body{
         }
         & p{
             margin-bottom: 1.5rem;
-            font-size: 1rem;
+            font-size: 1.3rem;
         }
     
         & button{
@@ -363,7 +363,7 @@ body{
         }
 
          & .reset{
-            font-size: .7rem;
+            font-size: .8rem;
             color: #fff;
             border: solid 1px red;
             background: rgba(245, 18, 18, 0.759);
@@ -373,7 +373,7 @@ body{
 
         & .input_dna{
             display: block;
-            width: 90%;
+            width: 100%;
             box-sizing: border-box;
         }
 
