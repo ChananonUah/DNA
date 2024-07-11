@@ -32,7 +32,7 @@ body{
 .box{
     
     
-    width: 50%;
+    width: 60%;
     background: #fff;
     border-radius: 15px;
     box-shadow: 15px 15px 20px rgb(2, 191, 243) , -5px -5px 5px rgb(1, 46, 243);;
@@ -112,11 +112,67 @@ body{
 
 }
 
+@media only screen and (max-width:1440px){
+    .box{
+        width: 60%;
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 15px 15px 20px rgb(2, 191, 243) , -5px -5px 5px rgb(1, 46, 243);;
+        padding: 1rem;
+        font-size: 2rem;
+        & h1{
+            font-size: 2.7rem;
+            margin-bottom: 1rem;
+        }
+        & p{
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            
+        }
+    
+        & input{
+            margin-top: .5rem;
+            
+            font-size: 1.1rem;
+        }
+    
+        & button{
+            margin-top: .8rem;
+            font-size: 1rem;
+        }
+    
+        & #dna_rep{
+            font-size: 1.4rem;
+            color: #000000;
+            border: solid 1px rgba(1, 235, 20, 0.759);
+            background: rgba(1, 235, 20, 0.759);
+            padding: 3px;
+            border-radius: 10px;
+        }
+
+         & .reset{
+           
+            font-size: 1.2rem;
+            color: #fff;
+            border: solid 1px red;
+            background: rgba(245, 18, 18, 0.759);
+            padding: 3px;
+            border-radius: 10px;
+        }
+
+        & .input_dna{
+            width: 70%;
+            box-sizing: border-box;
+        }
+    
+    }
+}
+
 @media only screen and (max-width:1080px){
     .box{
     
     
-        width: 50%;
+        width: 60%;
         background: #fff;
         border-radius: 15px;
         box-shadow: 15px 15px 20px rgb(2, 191, 243) , -5px -5px 5px rgb(1, 46, 243);;
@@ -333,11 +389,11 @@ body{
 
 @media only screen and (max-width: 400px){
     .box{
-        text-align: center;
+
         width: 90%;
         & input{
-            width: 30px;
             font-size: 1rem;
+            
         }
         & h1{
             font-size: 1.5rem;
@@ -349,7 +405,7 @@ body{
         }
     
         & button{
-            font-size: .3rem;
+            font-size: .2rem;
         }
     
         & #dna_rep{
@@ -362,7 +418,7 @@ body{
         }
 
          & .reset{
-            font-size: .8rem;
+            font-size: .7rem;
             color: #fff;
             border: solid 1px red;
             background: rgba(245, 18, 18, 0.759);
@@ -371,14 +427,12 @@ body{
         }
 
         & .input_dna{
-            display: block;
-            width: 100%;
+            width: 70%;
             box-sizing: border-box;
         }
 
         & #show_ans{
             font-size: .8rem;
-            text-align: start;
         }
     }
 }
