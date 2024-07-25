@@ -17,18 +17,33 @@
                 <input type="radio" name="type_dna" id="type_2" value="non" onclick="check('2')"> Non-Template
                 <input type="radio" name="type_dna" id="type_3" value="rna" onclick="check('3')"> mRNA
             </p>
+            
             <input type="number" style="width: 35px;" id="a">'
             <input placeholder="สาย DNA / RNA" id="DNA" class="input_dna">
             <input type="number" style="width: 35px;" id="b">'
+            
             <p>
                 <button id="dna_rep">RESULT</button>
                 <button onclick="reset()" class="reset">RESET</button>
             </p>
-            <div style="background-color: rgb(0, 195, 255);padding: 20px;border-radius: 20px;" id="show_ans">แสดงคำตอบที่นี่</div>
+            <div style="background-color: rgb(0, 195, 255);padding: 20px;border-radius: 20px;" id="show_ans1">แสดงคำตอบที่นี่</div>
         </div>
-        
-        
     </div>
+    <div class="boxbig">
+        <div class="box">
+            <h1>หาลำดับเบส mRNA จาก Polypetide</h1>
+            <p>Ex : Met-Lys-Arg</p>
+            
+            <input placeholder="Polypeptide" id="peptide" class="input_dna" style="width: 100%;"> 
+            
+            <p>
+                <button id="pep">RESULT</button>
+                <button onclick="reset()" class="reset">RESET</button>
+            </p>
+            <div style="background-color: rgb(0, 195, 255);padding: 20px;border-radius: 20px;" id="show_ans2">แสดงคำตอบที่นี่</div>
+        </div>
+    </div>
+    
 
     <script src="DNA.js"></script>
 </body>
