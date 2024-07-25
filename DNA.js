@@ -69,7 +69,7 @@ function replication1() {
         alert('เลือกประเภทสาย Polynuecleotile')
     }
 
-    document.getElementById('show_ans').innerHTML = (show)
+    document.getElementById('show_ans1').innerHTML = (show)
     
 }
 
@@ -159,6 +159,10 @@ function rna1(input_dna) {
 
 //Amino
 function find_amino(mRna) {
+    let count = 0
+    let codon = ""
+    let b = -1
+    let ans = ""
     const codon_to_amino_acid = {
         'UUU': 'Phenylalanine', 'UUC': 'Phenylalanine',
         'UUA': 'Leucine', 'UUG': 'Leucine',
@@ -186,12 +190,6 @@ function find_amino(mRna) {
         'AGA': 'Arginine', 'AGG': 'Arginine',
         'GGU': 'Glycine', 'GGC': 'Glycine', 'GGA': 'Glycine', 'GGG': 'Glycine'
     }
-
-    let count = 0
-    let codon = ""
-    let b = -1
-    let ans = ""
-
     for (let i = 0; i < mRna.length; i++) {
         if (mRna[i] === "A"  && mRna[i + 1] === "U" && mRna[i + 2] === "G") {
             b = i;
@@ -241,5 +239,62 @@ function reset() {
     document.getElementById('a').value = ''
     document.getElementById('b').value = ''
     document.getElementById('DNA').value = ''
-    document.getElementById('show_ans').innerHTML = ('แสดงคำตอบที่นี่')
+    document.getElementById('show_ans1').innerHTML = ('แสดงคำตอบที่นี่')
 }
+
+
+//polypeptide to mRNA
+
+function find() {
+    const amino_codon = {
+                "PHE": ["UUU", "UUC"],
+                "LEU": ["UUA", "UUG", "CUU", "CUC", "CUA", "CUG"],
+                "ISO": ["AUU", "AUC", "AUA"],
+                "MET": ["AUG"],
+                "VAL": ["GUU", "GUC", "GUA", "GUG"],
+                "SER": ["UCU", "UCC", "UCA", "UCG", "AGU", "AGC"],
+                "PRO": ["CCU", "CCC", "CCA", "CCG"],
+                "THR": ["ACU", "ACC", "ACA", "ACG"],
+                "ALA": ["GCU", "GCC", "GCA", "GCG"],
+                "TYR": ["UAU", "UAC"],
+                "STOP": ["UAA", "UAG", "UGA"],
+                "HIS": ["CAU", "CAC"],
+                "GLN": ["CAA", "CAG"],
+                "ASN": ["AAU", "AAC"],
+                "LYS": ["AAA", "AAG"],
+                "ASP": ["GAU", "GAC"],
+                "GLU": ["GAA", "GAG"],
+                "CYS": ["UGU", "UGC"],
+                "TRP": ["UGG"],
+                "ARG": ["CGU", "CGC", "CGA", "CGG", "AGA", "AGG"],
+                "GLY": ["GGU", "GGC", "GGA", "GGG"]
+    }
+    let peptide =  document.getElementById('peptide').value
+    peptide = peptide.replaceAll('-', '')
+    peptide = peptide.toUpperCase()
+    const amino = []
+    for (let i = 0; i < peptide.length/3; i++) {
+        amino.push(amino_codon[peptide.slice(i*3,(i+1)*3)])
+    }
+    
+
+    function cartesianProduct(arr) {
+        return arr.reduce((a, b) => 
+            a.flatMap(d => 
+                b.map(e => [d, e].flat())
+            )
+        );
+    }
+
+    const results = cartesianProduct(amino);
+    let ans = ''
+    let k = 0
+    console.log(results)
+    results.forEach(result => {
+        k ++
+        ans  += `<p>${k}. ${result.join(' ')}</p>`
+    });
+    document.getElementById('show_ans2').innerHTML = (ans)
+}
+
+document.getElementById('pep').addEventListener('click', find) 
