@@ -231,7 +231,7 @@ function check(p) {
         }
 }
 
-function reset() {
+function reset1() {
     const radioButtons = document.querySelectorAll('input[type="radio"]');
             radioButtons.forEach(radio => {
                 radio.checked = false;
@@ -274,8 +274,16 @@ function find() {
     peptide = peptide.toUpperCase()
     const amino = []
     for (let i = 0; i < peptide.length/3; i++) {
-        amino.push(amino_codon[peptide.slice(i*3,(i+1)*3)])
+        peptide_check = peptide.slice(i*3,(i+1)*3)
+        if (!Object.keys(amino_codon).includes(peptide_check)) {
+            alert('กรดอะมิโนผิด')
+            break
+        }
+        else {
+            amino.push(amino_codon[peptide_check])
+        }
     }
+    
     
 
     function cartesianProduct(arr) {
@@ -298,3 +306,8 @@ function find() {
 }
 
 document.getElementById('pep').addEventListener('click', find) 
+
+function reset2() {
+    document.getElementById('peptide').value = ''
+    document.getElementById('show_ans2').innerHTML = ('แสดงคำตอบที่นี่')
+}
