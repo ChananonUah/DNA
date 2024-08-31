@@ -231,18 +231,6 @@ function check(p) {
         }
 }
 
-function reset1() {
-    const radioButtons = document.querySelectorAll('input[type="radio"]');
-            radioButtons.forEach(radio => {
-                radio.checked = false;
-            });
-    document.getElementById('a').value = ''
-    document.getElementById('b').value = ''
-    document.getElementById('DNA').value = ''
-    document.getElementById('show_ans1').innerHTML = ('แสดงคำตอบที่นี่')
-}
-
-
 //polypeptide to mRNA
 
 function find() {
@@ -298,14 +286,32 @@ function find() {
     let ans = ''
     let k = 0
     console.log(results)
-    results.forEach(result => {
+    if (results.length > 1) {
+         results.forEach(result => {
+            k ++
+            ans  += `<p>${k}. ${result.join(' ')}</p>`
+        });
+    }
+    else {
         k ++
-        ans  += `<p>${k}. ${result.join(' ')}</p>`
-    });
-    document.getElementById('show_ans2').innerHTML = (ans)
+        ans = `<p>1. ${results}</p>`
+    }
+    document.getElementById('show_ans2').innerHTML = (`<p>mRNA เป็นไปได้ ${k} สาย</p>`+ ans)
 }
 
 document.getElementById('pep').addEventListener('click', find) 
+
+function reset1() {
+    const radioButtons = document.querySelectorAll('input[type="radio"]');
+            radioButtons.forEach(radio => {
+                radio.checked = false;
+            });
+    document.getElementById('a').value = ''
+    document.getElementById('b').value = ''
+    document.getElementById('DNA').value = ''
+    document.getElementById('show_ans1').innerHTML = ('แสดงคำตอบที่นี่')
+}
+
 
 function reset2() {
     document.getElementById('peptide').value = ''
